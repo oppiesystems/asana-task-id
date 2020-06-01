@@ -1,0 +1,24 @@
+{
+  "name": "asana-task-id",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "register": "ts-node ./tasks/registerHook.ts"
+  },
+  "author": "Pat Migliaccio <pat@oppie.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "@now/node": "^1.6.1",
+    "@types/args": "^3.0.0",
+    "@types/asana": "^0.18.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "args": "^5.0.1",
+    "asana": "^0.18.4",
+    "dotenv": "^8.2.0",
+    "ts-node": "^8.10.2"
+  }
+}
