@@ -2,6 +2,8 @@
 
 Adds a project code prefix to new tasks added in Asana using a service deployed to [Vercel](https://vercel.com).
 
+![Project Code Prefix Example](./example.gif)
+
 e.g. `[PRJ-#] Task Name`
 
 ## Deployment
