@@ -54,3 +54,9 @@ Execute the Asana webhook registration script on the deployed production URL.
 ```sh
 yarn run register --url https://<PROJECT_URL>.now.sh/api/asana
 ```
+
+## Additonal Configuration
+
+### Environment Variables
+
+`WATCH_CHANGES` Enables prefixes to be added to tasks that already exist when an update occurs to any field within the task. (`true`/`false`) [Default = `false`] [*Optional*]
