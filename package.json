@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "register": "ts-node ./tasks/registerHook.ts"
+    "register": "ts-node ./tasks/registerHook.ts",
+    "get": "ts-node ./tasks/getHooks.ts",
+    "delete": "ts-node ./tasks/deleteHook.ts"
   },
   "author": "Pat Migliaccio <pat@oppie.io>",
   "license": "MIT",
