@@ -3,7 +3,9 @@
   "version": "1.0.1",
   "description": "Adds a project code prefix to new tasks added in Asana using a service deployed to Vercel.",
   "scripts": {
-    "register": "ts-node ./tasks/registerHook.ts"
+    "register": "ts-node ./tasks/registerHook.ts",
+    "get": "ts-node ./tasks/getHooks.ts",
+    "delete": "ts-node ./tasks/deleteHook.ts"
   },
   "author": "Pat Migliaccio <pat@oppie.io>",
   "license": "MIT",

@@ -45,6 +45,17 @@ export const handleHook = async (body: { events: AsanaEvent[] }) => {
   }
 };
 
+export const getHooks = async (workspaceId: string) => {
+  const client = registerClient();
+  const response = await client.webhooks.getAll(workspaceId);
+  return response.data;
+}
+
+export const deleteHook = async (webhookId: string) => {
+  const client = registerClient();
+  await client.webhooks.deleteById(webhookId);
+}
+
 export const getProjectCurrentId = async (
   project: Asana.resources.Projects.Type
 ): Promise<number> => {
