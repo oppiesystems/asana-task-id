@@ -2,6 +2,8 @@
 
 Adds a project code prefix to new tasks added in Asana using a service deployed to [Vercel](https://vercel.com).
 
+![Project Code Prefix Example](./example.gif)
+
 e.g. `[PRJ-#] Task Name`
 
 ## Deployment
@@ -59,7 +61,7 @@ yarn run register --url https://<PROJECT_URL>.now.sh/api/asana
 
 #### Environment Variables
 
-`ASANA_WORKSPACE_ID` Enables the retrieval and deletion of existing webhooks registered with the workspace [*Optional*]
+`ASANA_WORKSPACE_ID` Enables the retrieval and deletion of existing webhooks registered with the workspace. [*Optional*]
 
 `WATCH_CHANGES` Enables prefixes to be added to tasks that already exist when an update occurs to any field within the task. (`true`/`false`) [Default = `false`] [*Optional*]
 

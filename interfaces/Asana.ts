@@ -1,8 +1,8 @@
 export interface AsanaEvent {
   users: object;
   created_at: string;
-  action: 'added' | 'deleted';
-  parent: AsanaResource;
+  action: 'added' | 'deleted' | 'changed';
+  parent?: AsanaResource;
   resource: AsanaResource;
 }
 

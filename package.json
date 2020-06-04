@@ -1,8 +1,7 @@
 {
   "name": "asana-task-id",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "Adds a project code prefix to new tasks added in Asana using a service deployed to Vercel.",
   "scripts": {
     "register": "ts-node ./tasks/registerHook.ts",
     "get": "ts-node ./tasks/getHooks.ts",
@@ -14,6 +13,7 @@
     "@now/node": "^1.6.1",
     "@types/args": "^3.0.0",
     "@types/asana": "^0.18.0",
+    "ngrok": "^3.2.7",
     "tsc": "^1.20150623.0",
     "typescript": "^3.9.3"
   },
