@@ -13,6 +13,7 @@ args
 const { projectId, url } = args.parse(process.argv);
 
 (async () => {
+  console.log(`Creating hook for '${projectId}' on '${url}'`);
   await Asana.createHook(projectId, url);
-  console.log(`Created hook for '${projectId}' on '${url}'`);
+  console.log(`Webhook created!`);
 })()

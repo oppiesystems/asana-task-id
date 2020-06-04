@@ -54,3 +54,23 @@ Execute the Asana webhook registration script on the deployed production URL.
 ```sh
 yarn run register --url https://<PROJECT_URL>.now.sh/api/asana
 ```
+
+## Development
+
+Start the development server using the Vercel CLI.
+
+```sh
+now dev
+```
+
+Forward the local port to the outside using `ngrok`.
+
+```sh
+ngrok http 3000
+```
+
+Register the `ngrok` tunnel with the Asana webhook functionality.
+
+```sh
+yarn run register --url https://<NGROK_URL>.ngrok.io/api/asana
+```
