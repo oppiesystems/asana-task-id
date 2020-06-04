@@ -15,21 +15,22 @@ export const createHook = async (projectId: string, url: string) => {
 };
 
 export const handleHook = async (body: { events: AsanaEvent[] }) => {
-  const isAddedEvent = (x: AsanaEvent) => x.action === "added";
+  const isWatchChangeEvents = process.env.WATCH_CHANGES === "true";
+  const isActiveEvent = (x: AsanaEvent) => x.action === "added" || (isWatchChangeEvents && x.action === "changed");
   const filterTaskResource = (x: AsanaEvent) =>
-    x.resource.resource_type === "task" && x.parent.resource_type === "project";
+    x.resource.resource_type === "task" && (!x.parent || x.parent.resource_type === "project");
 
-  const addedTasks = body.events
-    .filter(isAddedEvent)
+  const activeTasks = body.events
+    .filter(isActiveEvent)
     .filter(filterTaskResource);
 
-  if (addedTasks && addedTasks.length) {
+  if (activeTasks && activeTasks.length) {
     const client = registerClient();
     const project = await client.projects.findById(process.env.ASANA_PROJECT_ID);
     const currentId = await getProjectCurrentId(project);
 
     let updatedId = currentId;
-    for (let task of addedTasks) {
+    for (let task of activeTasks) {
       const currentTask = await client.tasks.findById(task.resource.gid);
       const isTaskPrefixAlreadyExists = !!currentTask.name.match(TASK_PREFIX_PATTERN);
       if (!isTaskPrefixAlreadyExists) {
